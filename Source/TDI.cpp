@@ -1,5 +1,13 @@
-int Test(int argc, char **argv);
-int main(int argc, char **argv)
+
+#include <C_General.hpp>
+#include <C_Image.hpp>
+#include <iostream>
+
+
+int main(int argc, char** argv)
 {
-	return Test(argc, argv);
+    cout << "---------------------------------------------" << endl;
+    cout << "|        Deteccion de bordes con Sobel      |" << endl;
+    cout << "|       Realizado por Alejandro MT          |" << endl;
+    cout << "---------------------------------------------" << endl;
 }

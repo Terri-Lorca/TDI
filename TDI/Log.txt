@@ -15,3 +15,388 @@ TDI E (C_Image_BMP,  160) File doesn't exist : Hercules.bmp
 TDI E (C_Image_BMP,  160) File doesn't exist : Hercules.bmp
 TDI E (TDI,   32) Could not read the image file
 TDI E (C_Image_BMP,  160) File doesn't exist : Aguadulce_Gris.bmp
+TDI E (C_Image_BMP,  160) File doesn't exist : Hercules.bmp
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+TDI E (C_Image_BMP,  160) File doesn't exist : Hercules_Gris.bmp
+TDI E (C_Matrix,  246) Index out of matrix boundaries
+TDI E (C_Matrix,  246) Index out of matrix boundaries
+TDI E (C_Matrix,  102) Wrong matrix limits
+TDI E (C_Matrix_Functions_2,  285) Creating a matrix
+TDI E (C_Image_BMP,  233) Can't write an empty matrix
+Press ENTER to continue.
+TDI E (C_Image_BMP,  160) File doesn't exist : Hercules_Gris.bmp
+TDI E (C_Matrix,  246) Index out of matrix boundaries
+TDI E (C_Matrix,  246) Index out of matrix boundaries
+TDI E (C_Matrix,  102) Wrong matrix limits
+TDI E (C_Matrix_Functions_2,  285) Creating a matrix
+TDI E (C_Image_BMP,  233) Can't write an empty matrix
+Press ENTER to continue.
+TDI E (C_Image_BMP,  160) File doesn't exist : Hercules_Gris.bmp
+TDI E (C_Matrix,  102) Wrong matrix limits
+TDI E (C_Matrix_Functions_2,  285) Creating a matrix
+TDI E (C_Image_BMP,  233) Can't write an empty matrix
+Press ENTER to continue.
+TDI E (C_Image_BMP,  160) File doesn't exist : Aguadulce_Gris.bmp
+TDI E (C_Matrix_Functions_2,  421) Can't extract isolines from an empty matrix
+TDI E (C_Image_BMP,  233) Can't write an empty matrix
+Press ENTER to continue.
+TDI E (C_Image_BMP,  160) File doesn't exist : Ajedrez_Gris.bmp
+TDI E (C_Matrix,  339) Wrong matrix limits
+TDI E (C_Matrix_Functions_2,  470) Can't resize result matrix
+TDI E (C_Matrix_IO,   70) Could not open file:  : PaletaSurtida256.txt
+TDI E (C_Image_BMP,  233) Can't write an empty matrix
+Press ENTER to continue.
+TDI E (C_Image_BMP,  160) File doesn't exist : Ajedrez_Gris.bmp
+TDI E (C_Matrix,  339) Wrong matrix limits
+TDI E (C_Matrix_Functions_2,  470) Can't resize result matrix
+TDI E (C_Matrix_IO,   70) Could not open file:  : PaletaSurtida256.txt
+TDI E (C_Image_BMP,  233) Can't write an empty matrix
+Press ENTER to continue.
+TDI E (C_Image_BMP,  160) File doesn't exist : Alumina.bmp
+TDI E (C_Matrix,  339) Wrong matrix limits
+TDI E (C_Matrix_Functions_2,  175) Resizing a matrix
+TDI E (C_Matrix,  339) Wrong matrix limits
+TDI E (C_Matrix_Functions_2,  470) Can't resize result matrix
+TDI E (C_Matrix,  102) Wrong matrix limits
+TDI E (C_Matrix_Functions_2,  720) Can't resize auxiliar matrix
+TDI E (C_Matrix_IO,   70) Could not open file:  : PaletaSurtida256.txt
+TDI E (C_Image_BMP,  233) Can't write an empty matrix
+Press ENTER to continue.
+TDI T (Test,  782) 
+TDI T (Test,  783) TEST: General
+TDI W (Test,  785) Ordenador little endian
+TDI T (Test,  789) Infinity : inf
+TDI T (Test,  791) Negative infinity : -inf
+TDI T (Test,  793) Not a number : nan
+TDI T (Test,  795) Negative not a number : -nan(ind)
+TDI T (Test,  798) Float infinity : inf
+TDI T (Test,  800) Float negative infinity : -inf
+TDI T (Test,  802) Float not a number : nan
+TDI T (Test,  804) Float negative not a number : -nan(ind)
+Press ENTER to continue.
+TDI T (Test,  814) 
+TDI T (Test,  815) TEST: Trace
+TDI T (Test,  817) It must count from 1 to 10
+TDI T (Test,  818)  1 C_Trace
+TDI W (Test,  819)  2 C_Warning
+TDI W (Test,  821)  3 C_IfWarning
+TDI E (Test,  822)  4 C_Error
+TDI E (Test,  824)  5 C_IfError
+TDI T (Test,  825)  6 C_TraceNum (Int) : 30
+TDI T (Test,  826)  7 C_TraceNum (Float) : 0.333333333333
+TDI T (Test,  827)  8 C_Trace2Num : 3.72008e-44, 2.68812e+43
+TDI E (Test,  828)  9 C_IfErrorStr : <error string>
+TDI T (Test,  829) 10 C_TraceBytes. BYTES:
+  69  6E  67  3E   0  CC  CC  CC  CC  CC
+TDI T (Test,  830) PRESS A KEY
+Press ENTER to continue.
+TDI T (Test,  847) 
+TDI T (Test,  848) TEST: File
+TDI E (C_File,   92) Error writing file
+TDI E (Test,  851) Aqui debe dar un error por escribir antes de abrir el fichero
+TDI T (Test,  935) COMPROBACION DE WriteIntBigEndian y ReadIntBigEndian
+TDI T (Test,  936) DEBE LEER BIEN TODOS
+TDI T (Test,  940) BigEndian    0x21 : 33
+TDI T (Test,  942) LittleEndian 0x21 : 33
+TDI T (Test,  945) BigEndian    0xFF : -1
+TDI T (Test,  947) LittleEndian 0xFF : -1
+TDI T (Test,  950) BigEndian    -0x21 : -33
+TDI T (Test,  952) LittleEndian -0x21 : -33
+TDI T (Test,  955) BigEndian    0x4321 : 17185
+TDI T (Test,  957) LittleEndian 0x4321 : 17185
+TDI T (Test,  959) BigEndian    -0x4321 : -17185
+TDI T (Test,  961) LittleEndian -0x4321 : -17185
+TDI T (Test,  964) BigEndian    0x77654321 : 2003125025
+TDI T (Test,  966) LittleEndian 0x77654321 : 2003125025
+TDI T (Test,  968) BigEndian    -0x77654321 : -2003125025
+TDI T (Test,  970) LittleEndian -0x77654321 : -2003125025
+TDI T (Test,  973) BigEndian MaxFloat : 3.40282e+38, 3.40282e+38
+TDI T (Test,  975) LittleEndian MaxFloat : 3.40282e+38, 3.40282e+38
+TDI T (Test,  978) BigEndian MaxDouble : 1.79769e+308, 1.79769e+308
+TDI T (Test,  980) LittleEndian MaxDouble : 1.79769e+308, 1.79769e+308
+Press ENTER to continue.
+TDI T (Test,  991) 
+TDI T (Test,  992) TEST: Arguments
+TDI E (C_Arguments,   98) Wrong number of arguments in program call.
+Press ENTER to continue.
+TDI T (Test, 1011) El parametro 1 es : (null)
+Press ENTER to continue.
+TDI T (Test, 1022) 
+TDI T (Test, 1023) 
+TDI T (Test, 1024) TEST: Matrix basics
+TDI T (Test, 1025) 
+TDI E (C_Matrix,  102) Wrong matrix limits
+TDI E (Test, 1028) Error creating a new matrix
+TDI T (Test, 1031) Matrix creation
+Press ENTER to continue.
+TDI T (Test, 1037) Matrix data access
+TDI T (Test, 1043) Submatrix at (1, 4)
+Press ENTER to continue.
+TDI T (Test, 1049) Submatrix of submatrix at (3, 6)
+Press ENTER to continue.
+TDI T (Test, 1056) Modification of supermatrix through submatrix
+Press ENTER to continue.
+TDI T (Test, 1064) Modification of supermatrix through submatrix of submatrix
+Press ENTER to continue.
+TDI T (Test, 1073) Restoring best visible values
+TDI T (Test, 1079) Matrix copy. NEW MATRIX:
+Press ENTER to continue.
+TDI T (Test, 1086) Matrix resize
+Press ENTER to continue.
+TDI T (Test, 1092) Try to resize a matrix with submatrices (There'll be ERROR):
+TDI E (C_Matrix,  337) Trying to resize a matrix wih defined submatrices
+TDI E (Test, 1094) Couldn't resize.
+Press ENTER to continue.
+TDI T (Test, 1098) 
+TDI T (Test, 1099) 
+TDI T (Test, 1100) Matrix:
+TDI T (Test, 1102) Subatrix:
+Press ENTER to continue.
+TDI T (Test, 1108) Submatrix resize
+Press ENTER to continue.
+TDI T (Test, 1114) Submatrix move to (2, 5)
+Press ENTER to continue.
+TDI T (Test, 1142) Minimum : -24
+TDI T (Test, 1143) Maximum : 25
+TDI T (Test, 1144) Sum     : 25
+TDI T (Test, 1145) Mean    : 0.5
+Press ENTER to continue.
+TDI T (Test, 1160) Reading image
+TDI E (C_Image_BMP,  160) File doesn't exist : Hercules.bmp
+TDI E (Test, 1162) Could not read the image file
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+TDI E (C_Image_BMP,  160) File doesn't exist : Hercules_Gris.bmp
+TDI E (C_Matrix,  246) Index out of matrix boundaries
+TDI E (C_Matrix,  246) Index out of matrix boundaries
+TDI E (C_Matrix,  102) Wrong matrix limits
+TDI E (C_Matrix_Functions_2,  285) Creating a matrix
+TDI E (C_Image_BMP,  233) Can't write an empty matrix
+Press ENTER to continue.
+TDI E (C_Image_BMP,  160) File doesn't exist : Hercules_Gris.bmp
+TDI E (C_Matrix,  246) Index out of matrix boundaries
+TDI E (C_Matrix,  246) Index out of matrix boundaries
+TDI E (C_Matrix,  102) Wrong matrix limits
+TDI E (C_Matrix_Functions_2,  285) Creating a matrix
+TDI E (C_Image_BMP,  233) Can't write an empty matrix
+Press ENTER to continue.
+TDI E (C_Image_BMP,  160) File doesn't exist : Hercules_Gris.bmp
+TDI E (C_Matrix,  102) Wrong matrix limits
+TDI E (C_Matrix_Functions_2,  285) Creating a matrix
+TDI E (C_Image_BMP,  233) Can't write an empty matrix
+Press ENTER to continue.
+TDI E (C_Image_BMP,  160) File doesn't exist : Aguadulce_Gris.bmp
+TDI E (C_Matrix_Functions_2,  421) Can't extract isolines from an empty matrix
+TDI E (C_Image_BMP,  233) Can't write an empty matrix
+Press ENTER to continue.
+TDI E (C_Image_BMP,  160) File doesn't exist : Ajedrez_Gris.bmp
+TDI E (C_Matrix,  339) Wrong matrix limits
+TDI E (C_Matrix_Functions_2,  470) Can't resize result matrix
+TDI E (C_Matrix_IO,   70) Could not open file:  : PaletaSurtida256.txt
+TDI E (C_Image_BMP,  233) Can't write an empty matrix
+Press ENTER to continue.
+TDI E (C_Image_BMP,  160) File doesn't exist : Ajedrez_Gris.bmp
+TDI E (C_Matrix,  339) Wrong matrix limits
+TDI E (C_Matrix_Functions_2,  470) Can't resize result matrix
+TDI E (C_Matrix_IO,   70) Could not open file:  : PaletaSurtida256.txt
+TDI E (C_Image_BMP,  233) Can't write an empty matrix
+Press ENTER to continue.
+TDI E (C_Image_BMP,  160) File doesn't exist : Alumina.bmp
+TDI E (C_Matrix,  339) Wrong matrix limits
+TDI E (C_Matrix_Functions_2,  175) Resizing a matrix
+TDI E (C_Matrix,  339) Wrong matrix limits
+TDI E (C_Matrix_Functions_2,  470) Can't resize result matrix
+TDI E (C_Matrix,  102) Wrong matrix limits
+TDI E (C_Matrix_Functions_2,  720) Can't resize auxiliar matrix
+TDI E (C_Matrix_IO,   70) Could not open file:  : PaletaSurtida256.txt
+TDI E (C_Image_BMP,  233) Can't write an empty matrix
+Press ENTER to continue.
+TDI T (Test,  782) 
+TDI T (Test,  783) TEST: General
+TDI W (Test,  785) Ordenador little endian
+TDI T (Test,  789) Infinity : inf
+TDI T (Test,  791) Negative infinity : -inf
+TDI T (Test,  793) Not a number : nan
+TDI T (Test,  795) Negative not a number : -nan(ind)
+TDI T (Test,  798) Float infinity : inf
+TDI T (Test,  800) Float negative infinity : -inf
+TDI T (Test,  802) Float not a number : nan
+TDI T (Test,  804) Float negative not a number : -nan(ind)
+Press ENTER to continue.
+TDI T (Test,  814) 
+TDI T (Test,  815) TEST: Trace
+TDI T (Test,  817) It must count from 1 to 10
+TDI T (Test,  818)  1 C_Trace
+TDI W (Test,  819)  2 C_Warning
+TDI W (Test,  821)  3 C_IfWarning
+TDI E (Test,  822)  4 C_Error
+TDI E (Test,  824)  5 C_IfError
+TDI T (Test,  825)  6 C_TraceNum (Int) : 30
+TDI T (Test,  826)  7 C_TraceNum (Float) : 0.333333333333
+TDI T (Test,  827)  8 C_Trace2Num : 3.72008e-44, 2.68812e+43
+TDI E (Test,  828)  9 C_IfErrorStr : <error string>
+TDI T (Test,  829) 10 C_TraceBytes. BYTES:
+  69  6E  67  3E   0  CC  CC  CC  CC  CC
+TDI T (Test,  830) PRESS A KEY
+Press ENTER to continue.
+TDI T (Test,  847) 
+TDI T (Test,  848) TEST: File
+TDI E (C_File,   92) Error writing file
+TDI E (Test,  851) Aqui debe dar un error por escribir antes de abrir el fichero
+TDI T (Test,  935) COMPROBACION DE WriteIntBigEndian y ReadIntBigEndian
+TDI T (Test,  936) DEBE LEER BIEN TODOS
+TDI T (Test,  940) BigEndian    0x21 : 33
+TDI T (Test,  942) LittleEndian 0x21 : 33
+TDI T (Test,  945) BigEndian    0xFF : -1
+TDI T (Test,  947) LittleEndian 0xFF : -1
+TDI T (Test,  950) BigEndian    -0x21 : -33
+TDI T (Test,  952) LittleEndian -0x21 : -33
+TDI T (Test,  955) BigEndian    0x4321 : 17185
+TDI T (Test,  957) LittleEndian 0x4321 : 17185
+TDI T (Test,  959) BigEndian    -0x4321 : -17185
+TDI T (Test,  961) LittleEndian -0x4321 : -17185
+TDI T (Test,  964) BigEndian    0x77654321 : 2003125025
+TDI T (Test,  966) LittleEndian 0x77654321 : 2003125025
+TDI T (Test,  968) BigEndian    -0x77654321 : -2003125025
+TDI T (Test,  970) LittleEndian -0x77654321 : -2003125025
+TDI T (Test,  973) BigEndian MaxFloat : 3.40282e+38, 3.40282e+38
+TDI T (Test,  975) LittleEndian MaxFloat : 3.40282e+38, 3.40282e+38
+TDI T (Test,  978) BigEndian MaxDouble : 1.79769e+308, 1.79769e+308
+TDI T (Test,  980) LittleEndian MaxDouble : 1.79769e+308, 1.79769e+308
+Press ENTER to continue.
+TDI T (Test,  991) 
+TDI T (Test,  992) TEST: Arguments
+TDI E (C_Arguments,   98) Wrong number of arguments in program call.
+Press ENTER to continue.
+TDI T (Test, 1011) El parametro 1 es : (null)
+Press ENTER to continue.
+TDI T (Test, 1022) 
+TDI T (Test, 1023) 
+TDI T (Test, 1024) TEST: Matrix basics
+TDI T (Test, 1025) 
+TDI E (C_Matrix,  102) Wrong matrix limits
+TDI E (Test, 1028) Error creating a new matrix
+TDI T (Test, 1031) Matrix creation
+Press ENTER to continue.
+TDI T (Test, 1037) Matrix data access
+TDI T (Test, 1043) Submatrix at (1, 4)
+Press ENTER to continue.
+TDI T (Test, 1049) Submatrix of submatrix at (3, 6)
+Press ENTER to continue.
+TDI T (Test, 1056) Modification of supermatrix through submatrix
+Press ENTER to continue.
+TDI T (Test, 1064) Modification of supermatrix through submatrix of submatrix
+Press ENTER to continue.
+TDI T (Test, 1073) Restoring best visible values
+TDI T (Test, 1079) Matrix copy. NEW MATRIX:
+Press ENTER to continue.
+TDI T (Test, 1086) Matrix resize
+Press ENTER to continue.
+TDI T (Test, 1092) Try to resize a matrix with submatrices (There'll be ERROR):
+TDI E (C_Matrix,  337) Trying to resize a matrix wih defined submatrices
+TDI E (Test, 1094) Couldn't resize.
+Press ENTER to continue.
+TDI T (Test, 1098) 
+TDI T (Test, 1099) 
+TDI T (Test, 1100) Matrix:
+TDI T (Test, 1102) Subatrix:
+Press ENTER to continue.
+TDI T (Test, 1108) Submatrix resize
+Press ENTER to continue.
+TDI T (Test, 1114) Submatrix move to (2, 5)
+Press ENTER to continue.
+TDI T (Test, 1142) Minimum : -24
+TDI T (Test, 1143) Maximum : 25
+TDI T (Test, 1144) Sum     : 25
+TDI T (Test, 1145) Mean    : 0.5
+Press ENTER to continue.
+TDI T (Test, 1160) Reading image
+TDI E (C_Image_BMP,  160) File doesn't exist : Hercules.bmp
+TDI E (Test, 1162) Could not read the image file
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+Press ENTER to continue.
+TDI E (C_Image_BMP,  160) File doesn't exist : Hercules.bmp
+TDI E (C_Image_BMP,  160) File doesn't exist : C:Hercules.bmp
+TDI E (C_Image_BMP,  160) File doesn't exist : Hercules.bmp
+TDI E (C_Image_BMP,  160) File doesn't exist : Hercules.bmp
+TDI E (C_Image_BMP,  160) File doesn't exist : Aguadulce_Gris.bmp

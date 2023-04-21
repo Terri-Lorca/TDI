@@ -1211,3 +1211,9 @@ Press ENTER to continue.
 Press ENTER to continue.
 Press ENTER to continue.
 Press ENTER to continue.
+TDI E (C_Image_BMP,  182) BMP option erroneous or not implemented: NUM BITS PER PLANE : 32
+TDI E (C_Image_BMP,  182) BMP option erroneous or not implemented: NUM BITS PER PLANE : 32
+TDI E (C_Image_BMP,  182) BMP option erroneous or not implemented: NUM BITS PER PLANE : 32
+TDI E (C_Image_BMP,  182) BMP option erroneous or not implemented: NUM BITS PER PLANE : 32
+TDI E (C_Image_BMP,  182) BMP option erroneous or not implemented: NUM BITS PER PLANE : 32
+TDI E (C_Image_BMP,  182) BMP option erroneous or not implemented: NUM BITS PER PLANE : 1

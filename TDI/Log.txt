@@ -1,0 +1,17 @@
+TDI E (C_Image_BMP,  160) File doesn't exist : cout
+TDI E (C_Image_BMP,  160) File doesn't exist : Hercules.bmp
+TDI E (C_Image_BMP,  160) File doesn't exist : Hercules
+TDI E (C_Image_BMP,  160) File doesn't exist : Hercules.bmp
+TDI E (C_Image_BMP,  160) File doesn't exist : Hercules.bmp
+TDI E (C_Image_BMP,  160) File doesn't exist : Alumina.bmp
+TDI E (C_Image_BMP,  160) File doesn't exist : Alumina.bmp
+TDI E (C_Image_BMP,  160) File doesn't exist : Hercules.bmp
+TDI E (C_Image_BMP,  160) File doesn't exist : Hercules.bmp
+TDI E (C_Image_BMP,  160) File doesn't exist : Hercules.bmp
+TDI E (C_Image_BMP,  160) File doesn't exist : Hercules.bmp
+TDI E (C_Image_BMP,  160) File doesn't exist : Hercules.bmp
+TDI E (C_Image_BMP,  160) File doesn't exist : Hercules.bmp
+TDI E (C_Image_BMP,  160) File doesn't exist : Hercules.bmp
+TDI E (C_Image_BMP,  160) File doesn't exist : Hercules.bmp
+TDI E (TDI,   32) Could not read the image file
+TDI E (C_Image_BMP,  160) File doesn't exist : Aguadulce_Gris.bmp

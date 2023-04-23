@@ -15,8 +15,8 @@
 #include <iostream>
 
 string nombreImg, nombreImgCompleto;
-C_Image imagen, imgSobelX, imgSobelY, imgFinal, original;
-int umbral;
+C_Image imagen, imgSobelX, imgSobelY, imgFinal, original, imagenIvertida;
+int umbral, imprimirXY, imgComb, boceto;
 
 void Sobelx();
 void Sobely();
@@ -36,7 +36,7 @@ int main(int argc, char** argv)
     cout << "---------------------------------------------" << endl;
 
     cout << "Introduzca el nombre de la imagen que quieres procesa\n";
-    cout << "(La imagen debe estar en la carpeta del proyecto)\n";
+    cout << "(La imagen debe estar en la carpeta Run del proyecto)\n";
     cin >> nombreImg;
     nombreImgCompleto = nombreImg + ".bmp";
     imagen.ReadBMP (&nombreImgCompleto[0]);
@@ -49,13 +49,20 @@ int main(int argc, char** argv)
         /*suavizadoGaussiano(imagen, 1.0);*/
         Sobelx();
         Sobely();
-        cout << "Introduce el umbral\n";
-        imgSobelX.WriteBMP("Prueba1.bmp");
-        imgSobelY.WriteBMP("Prueba2.bmp");
+        cout << "Desea imprimir las imagenes correspodientes al los ejes X e Y ? ( Introduca 1 para si)\n";
+        cin >> imprimirXY;
+        if (imprimirXY == 1) {
+            imgSobelX.WriteBMP("Prueba1.bmp");
+            imgSobelY.WriteBMP("Prueba2.bmp");
+        }
         imgFinal = imagen;
         magnitudGradientes();
-        invertirColores();
-        imgFinal.WriteBMP("Final.bmp");
+        cout << "Desea imprimir la imagen correspodientes a la combinación de los ejes X e Y ? ( Introduca 1 para si)\n";
+        cin >> imgComb;
+        if (imgComb == 1) imgFinal.WriteBMP("Final.bmp");
+        invertirColores(); cout << "Desea imprimir la imagen final con el fondo blanco y los bordes negros? ( Introduca 1 para si)\n";
+        cin >> boceto;
+        if (boceto == 1) imagenIvertida.WriteBMP("FinalInvertida.bmp");
     }
 }
 
@@ -171,11 +178,12 @@ void suavizadoGaussiano(C_Image imagen, double sigma) {
 }
 
 void invertirColores() {
+    imagenIvertida = imagen;
     for (int i = imagen.FirstRow() + 1; i <= imagen.LastRow() - 1; i++) {
         for (int j = imagen.FirstCol() + 1; j <= imagen.LastCol() - 1; j++) {
             int sum = 255 - imgFinal(i, j);
                 if (sum < 0) sum = sum *  -1;
-                imgFinal(i, j) = sum;
+                imagenIvertida(i, j) = sum;
         }
     }
 }

@@ -15,8 +15,8 @@
 #include <iostream>
 
 string nombreImg, nombreImgCompleto;
-C_Image imagen, imgSobelX, imgSobelY, imgFinal, original, imagenIvertida;
-int umbral, imprimirXY, imgComb, boceto;
+C_Image imagen, imgSobelX, imgSobelY, imgFinal, original, imagenIvertida, aux;
+int umbral, imprimirXY, imgComb, boceto, tam;
 
 void Sobelx();
 void Sobely();
@@ -84,29 +84,40 @@ void Sobely() {
 
 void Sobelx() {
     C_Matrix Msobel(0, 4, 0, 4, 0);
-    Msobel(0, 0) = -1; Msobel(1, 0) = -4; Msobel(2, 0) = -6; Msobel(3, 0) = -4; Msobel(4, 0) = -1;
-    Msobel(0, 1) = -2; Msobel(1, 1) = -8; Msobel(2, 1) = -12; Msobel(3, 1) = -8; Msobel(4, 1) = -2;
+    Msobel(0, 0) = 2; Msobel(1, 0) = 2; Msobel(2, 0) = 4; Msobel(3, 0) = 2; Msobel(4, 0) = 2;
+    Msobel(0, 1) = 1; Msobel(1, 1) = 1; Msobel(2, 1) = 2; Msobel(3, 1) = 1; Msobel(4, 1) = 1;
     Msobel(0, 2) = 0; Msobel(1, 2) = 0; Msobel(2, 2) = 0; Msobel(3, 2) = 0; Msobel(4, 2) = 0;
-    Msobel(0, 3) = 2; Msobel(1, 3) = 8; Msobel(2, 3) = 12; Msobel(3, 3) = 8; Msobel(4, 3) = 2;
-    Msobel(0, 4) = 1; Msobel(1, 4) = 4; Msobel(2, 4) = 6; Msobel(3, 4) = 4; Msobel(4, 4) = 1;
+    Msobel(0, 3) = -1; Msobel(1, 3) = -1; Msobel(2, 3) = -2; Msobel(3, 3) = -1; Msobel(4, 3) = -1;
+    Msobel(0, 4) = -2; Msobel(1, 4) = -2; Msobel(2, 4) = -4; Msobel(3, 4) = -2; Msobel(4, 4) = -2;
 
     convolucion(imagen, Msobel, "x");
 }
 
 void Sobely() {
     C_Matrix Msobel(0, 4, 0, 4, 0);
-    Msobel(0, 0) = -1; Msobel(1, 0) = -2; Msobel(2, 0) = 0; Msobel(3, 0) = 2; Msobel(4, 0) = 1;
-    Msobel(0, 1) = -4; Msobel(1, 1) = -8; Msobel(2, 1) = 0; Msobel(3, 1) = 8; Msobel(4, 1) = 4;
-    Msobel(0, 2) = -6; Msobel(1, 2) = -12; Msobel(2, 2) = 0; Msobel(3, 2) = 12; Msobel(4, 2) = 6;
-    Msobel(0, 3) = -4; Msobel(1, 3) = -8; Msobel(2, 3) = 0; Msobel(3, 3) = 8; Msobel(4, 3) = 4;
-    Msobel(0, 4) = -1; Msobel(1, 4) = -2; Msobel(2, 4) = 0; Msobel(3, 4) = 2; Msobel(4, 4) = 1;
+    Msobel(0, 0) = 2; Msobel(1, 0) = 1; Msobel(2, 0) = 0; Msobel(3, 0) = -1; Msobel(4, 0) = -2;
+    Msobel(0, 1) = 2; Msobel(1, 1) = 1; Msobel(2, 1) = 0; Msobel(3, 1) = -1; Msobel(4, 1) = -2;
+    Msobel(0, 2) = 4; Msobel(1, 2) = 2; Msobel(2, 2) = 0; Msobel(3, 2) = -2; Msobel(4, 2) = -4;
+    Msobel(0, 3) = 2; Msobel(1, 3) = 1; Msobel(2, 3) = 0; Msobel(3, 3) = -1; Msobel(4, 3) = -2;
+    Msobel(0, 4) = 2; Msobel(1, 4) = 1; Msobel(2, 4) = 0; Msobel(3, 4) = -1; Msobel(4, 4) = -2;
 
     convolucion(imagen, Msobel, "y");
 }
 
 
 void convolucion(C_Image imagen, C_Matrix mascara, string eje) {
-    C_Image ampliada(imagen.FirstRow() - 1, imagen.LastRow() + 1, imagen.FirstCol() - 1, imagen.LastCol() + 1);
+
+    if (eje == "x") {
+        aux = imagen;
+        aux.Convolution(aux, mascara);
+        aux.WriteBMP("EjeXBiblio");
+    }
+    
+
+    int tam = mascara.LastRow() - mascara.FirstRow() + 1;
+    tam = (tam - 1) / 2;
+
+    C_Image ampliada(imagen.FirstRow() - tam, imagen.LastRow() + tam, imagen.FirstCol() - tam, imagen.LastCol() + tam);
 
     for (int i = ampliada.FirstRow(); i <= ampliada.LastRow(); i++) {
         for (int j = ampliada.FirstCol(); j <= ampliada.LastCol(); j++) {
@@ -123,10 +134,10 @@ void convolucion(C_Image imagen, C_Matrix mascara, string eje) {
     for (int i = imagen.FirstRow(); i <= imagen.LastRow(); i++) {
         for (int j = imagen.FirstCol(); j <= imagen.LastCol(); j++) {
             int suma = 0;
-            for (int x = -1; x <= 1; x++) {
-                for (int y = -1; y <= 1; y++) {
+            for (int x = -tam; x <= tam; x++) {
+                for (int y = -tam; y <= tam; y++) {
                     int row = i + x, col = j + y;
-                    suma += ampliada(row, col) * mascara(1 + x, 1 + y);
+                    suma += ampliada(row, col) * mascara(tam + x, tam + y);
                 }
             }
             if (suma > 255) suma = 255;
@@ -144,6 +155,7 @@ void convolucion(C_Image imagen, C_Matrix mascara, string eje) {
         cout << "Aplicada mascara en eje y\n";
     }
 }
+
 
 
 

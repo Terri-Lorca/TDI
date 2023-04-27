@@ -52,8 +52,8 @@ int main(int argc, char** argv)
         cout << "Desea imprimir las imagenes correspodientes al los ejes X e Y ? ( Introduca 1 para si)\n";
         cin >> imprimirXY;
         if (imprimirXY == 1) {
-            imgSobelX.WriteBMP("Prueba1.bmp");
-            imgSobelY.WriteBMP("Prueba2.bmp");
+            imgSobelX.WriteBMP("EjeX.bmp");
+            imgSobelY.WriteBMP("EjeY.bmp");
         }
         imgFinal = imagen;
         magnitudGradientes();
@@ -66,47 +66,67 @@ int main(int argc, char** argv)
     }
 }
 
-void Sobelx() {
+/*void Sobelx() {
     C_Matrix Msobel(0, 2, 0, 2, 0);
-    Msobel(0, 0) = -1;
-    Msobel(1, 0) = -2;
-    Msobel(2, 0) = -1;
-    Msobel(0, 1) = 0;
-    Msobel(1, 1) = 0;
-    Msobel(2, 1) = 0;
-    Msobel(0, 2) = 1;
-    Msobel(1, 2) = 2;
-    Msobel(2, 2) = 1;
-
+    Msobel(0, 0) = -1;Msobel(0, 1) = 0;Msobel(0, 2) = 1;
+    Msobel(1, 0) = -2;Msobel(1, 1) = 0;Msobel(1, 2) = 2;
+    Msobel(2, 0) = -1;Msobel(2, 1) = 0;Msobel(2, 2) = 1;
     convolucion(imagen, Msobel, "x");
 }
 
 void Sobely() {
     C_Matrix Msobel(0, 2, 0, 2, 0);
-    Msobel(0, 0) = -1;
-    Msobel(1, 0) = 0;
-    Msobel(2, 0) = 1;
-    Msobel(0, 1) = -2;
-    Msobel(1, 1) = 0;
-    Msobel(2, 1) = 2;
-    Msobel(0, 2) = -1;
-    Msobel(1, 2) = 0;
-    Msobel(2, 2) = 1;
+    Msobel(0, 0) = -1;Msobel(0, 1) = -2;Msobel(0, 2) = -1;
+    Msobel(1, 0) = 0;Msobel(1, 1) = 0;Msobel(1, 2) = 0;
+    Msobel(2, 0) = 1;Msobel(2, 1) = 2;Msobel(2, 2) = 1;
+    convolucion(imagen, Msobel, "y");
+}*/
+
+void Sobelx() {
+    C_Matrix Msobel(0, 4, 0, 4, 0);
+    Msobel(0, 0) = -1; Msobel(1, 0) = -4; Msobel(2, 0) = -6; Msobel(3, 0) = -4; Msobel(4, 0) = -1;
+    Msobel(0, 1) = -2; Msobel(1, 1) = -8; Msobel(2, 1) = -12; Msobel(3, 1) = -8; Msobel(4, 1) = -2;
+    Msobel(0, 2) = 0; Msobel(1, 2) = 0; Msobel(2, 2) = 0; Msobel(3, 2) = 0; Msobel(4, 2) = 0;
+    Msobel(0, 3) = 2; Msobel(1, 3) = 8; Msobel(2, 3) = 12; Msobel(3, 3) = 8; Msobel(4, 3) = 2;
+    Msobel(0, 4) = 1; Msobel(1, 4) = 4; Msobel(2, 4) = 6; Msobel(3, 4) = 4; Msobel(4, 4) = 1;
+
+    convolucion(imagen, Msobel, "x");
+}
+
+void Sobely() {
+    C_Matrix Msobel(0, 4, 0, 4, 0);
+    Msobel(0, 0) = -1; Msobel(1, 0) = -2; Msobel(2, 0) = 0; Msobel(3, 0) = 2; Msobel(4, 0) = 1;
+    Msobel(0, 1) = -4; Msobel(1, 1) = -8; Msobel(2, 1) = 0; Msobel(3, 1) = 8; Msobel(4, 1) = 4;
+    Msobel(0, 2) = -6; Msobel(1, 2) = -12; Msobel(2, 2) = 0; Msobel(3, 2) = 12; Msobel(4, 2) = 6;
+    Msobel(0, 3) = -4; Msobel(1, 3) = -8; Msobel(2, 3) = 0; Msobel(3, 3) = 8; Msobel(4, 3) = 4;
+    Msobel(0, 4) = -1; Msobel(1, 4) = -2; Msobel(2, 4) = 0; Msobel(3, 4) = 2; Msobel(4, 4) = 1;
+
     convolucion(imagen, Msobel, "y");
 }
 
-void convolucion(C_Image imagen, C_Matrix mascara, string eje) {
-    // Ampliar la imagen en los bordes duplicando los valores
-    imagen.Resize(imagen.FirstRow() - 1, imagen.LastRow() + 1, imagen.FirstCol() - 1, imagen.LastCol() + 1);
 
-    // Aplicar la máscara de convolución
-    C_Image resultado(original.FirstRow() , original.LastRow(), original.FirstCol(), original.LastCol());
-    for (int i = imagen.FirstRow() + 1; i <= imagen.LastRow() - 1; i++) {
-        for (int j = imagen.FirstCol() + 1; j <= imagen.LastCol() - 1; j++) {
+void convolucion(C_Image imagen, C_Matrix mascara, string eje) {
+    C_Image ampliada(imagen.FirstRow() - 1, imagen.LastRow() + 1, imagen.FirstCol() - 1, imagen.LastCol() + 1);
+
+    for (int i = ampliada.FirstRow(); i <= ampliada.LastRow(); i++) {
+        for (int j = ampliada.FirstCol(); j <= ampliada.LastCol(); j++) {
+            int row = i, col = j;
+            if (i < imagen.FirstRow()) row = imagen.FirstRow();
+            if (i > imagen.LastRow()) row = imagen.LastRow();
+            if (j < imagen.FirstCol()) col = imagen.FirstCol();
+            if (j > imagen.LastCol()) col = imagen.LastCol();
+            ampliada(i, j) = imagen(row, col);
+        }
+    }
+
+    C_Image resultado(imagen.FirstRow(), imagen.LastRow(), imagen.FirstCol(), imagen.LastCol());
+    for (int i = imagen.FirstRow(); i <= imagen.LastRow(); i++) {
+        for (int j = imagen.FirstCol(); j <= imagen.LastCol(); j++) {
             int suma = 0;
             for (int x = -1; x <= 1; x++) {
                 for (int y = -1; y <= 1; y++) {
-                    suma += imagen(i + x, j + y) * mascara(1 + x, 1 + y);
+                    int row = i + x, col = j + y;
+                    suma += ampliada(row, col) * mascara(1 + x, 1 + y);
                 }
             }
             if (suma > 255) suma = 255;
@@ -115,7 +135,6 @@ void convolucion(C_Image imagen, C_Matrix mascara, string eje) {
         }
     }
 
-    // Asignar el resultado a la imagen correspondiente
     if (eje.compare("x") == 0) {
         imgSobelX = resultado;
         cout << "Aplicada mascara en eje x\n";
@@ -128,8 +147,9 @@ void convolucion(C_Image imagen, C_Matrix mascara, string eje) {
 
 
 
+
 void magnitudGradientes() {
-    // Calcular la magnitud del gradiente
+
     for (int i = imgSobelX.FirstRow(); i <= imgSobelX.LastRow(); i++) {
         for (int j = imgSobelX.FirstCol(); j <= imgSobelX.LastCol(); j++) {
             int gradienteX = imgSobelX(i, j);
@@ -145,7 +165,7 @@ void umbralizar(int umbral) {
     for (int i = imgFinal.FirstRow(); i <= imgFinal.LastRow(); i++) {
         for (int j = imgFinal.FirstCol(); j <= imgFinal.LastCol(); j++) {
             if (imgFinal(i, j) > umbral) {
-                imgFinal(i, j) = 0; // Invierte los colores aquí
+                imgFinal(i, j) = 0; 
             }
             else {
                 imgFinal(i, j) = 255;

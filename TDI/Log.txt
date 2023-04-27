@@ -400,3 +400,6 @@ TDI E (C_Image_BMP,  160) File doesn't exist : C:Hercules.bmp
 TDI E (C_Image_BMP,  160) File doesn't exist : Hercules.bmp
 TDI E (C_Image_BMP,  160) File doesn't exist : Hercules.bmp
 TDI E (C_Image_BMP,  160) File doesn't exist : Aguadulce_Gris.bmp
+TDI E (C_Image_BMP,  160) File doesn't exist : Prueba.bmp
+TDI E (C_Image_BMP,  160) File doesn't exist : prueba.bmp
+TDI E (C_Image_BMP,  160) File doesn't exist : Prueba.bmp

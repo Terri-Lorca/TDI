@@ -22,7 +22,6 @@ void Sobelx();
 void Sobely();
 void convolucion(C_Image imagen, C_Matrix mascara, string eje);
 void umbralizar(int umbral);
-void suavizadoGaussiano(C_Image imagen, double sigma);
 void magnitudGradientes();
 void invertirColores();
 
@@ -66,7 +65,7 @@ int main(int argc, char** argv)
     }
 }
 
-/*void Sobelx() {
+void Sobelx() {
     C_Matrix Msobel(0, 2, 0, 2, 0);
     Msobel(0, 0) = -1;Msobel(0, 1) = 0;Msobel(0, 2) = 1;
     Msobel(1, 0) = -2;Msobel(1, 1) = 0;Msobel(1, 2) = 2;
@@ -80,38 +79,33 @@ void Sobely() {
     Msobel(1, 0) = 0;Msobel(1, 1) = 0;Msobel(1, 2) = 0;
     Msobel(2, 0) = 1;Msobel(2, 1) = 2;Msobel(2, 2) = 1;
     convolucion(imagen, Msobel, "y");
-}*/
-
-void Sobelx() {
-    C_Matrix Msobel(0, 4, 0, 4, 0);
-    Msobel(0, 0) = 2; Msobel(1, 0) = 2; Msobel(2, 0) = 4; Msobel(3, 0) = 2; Msobel(4, 0) = 2;
-    Msobel(0, 1) = 1; Msobel(1, 1) = 1; Msobel(2, 1) = 2; Msobel(3, 1) = 1; Msobel(4, 1) = 1;
-    Msobel(0, 2) = 0; Msobel(1, 2) = 0; Msobel(2, 2) = 0; Msobel(3, 2) = 0; Msobel(4, 2) = 0;
-    Msobel(0, 3) = -1; Msobel(1, 3) = -1; Msobel(2, 3) = -2; Msobel(3, 3) = -1; Msobel(4, 3) = -1;
-    Msobel(0, 4) = -2; Msobel(1, 4) = -2; Msobel(2, 4) = -4; Msobel(3, 4) = -2; Msobel(4, 4) = -2;
-
-    convolucion(imagen, Msobel, "x");
 }
 
-void Sobely() {
-    C_Matrix Msobel(0, 4, 0, 4, 0);
-    Msobel(0, 0) = 2; Msobel(1, 0) = 1; Msobel(2, 0) = 0; Msobel(3, 0) = -1; Msobel(4, 0) = -2;
-    Msobel(0, 1) = 2; Msobel(1, 1) = 1; Msobel(2, 1) = 0; Msobel(3, 1) = -1; Msobel(4, 1) = -2;
-    Msobel(0, 2) = 4; Msobel(1, 2) = 2; Msobel(2, 2) = 0; Msobel(3, 2) = -2; Msobel(4, 2) = -4;
-    Msobel(0, 3) = 2; Msobel(1, 3) = 1; Msobel(2, 3) = 0; Msobel(3, 3) = -1; Msobel(4, 3) = -2;
-    Msobel(0, 4) = 2; Msobel(1, 4) = 1; Msobel(2, 4) = 0; Msobel(3, 4) = -1; Msobel(4, 4) = -2;
-
-    convolucion(imagen, Msobel, "y");
-}
+//void Sobelx() {
+//    C_Matrix Msobelx(0, 4, 0, 4, 0);
+//    Msobelx(0, 0) = 2; Msobelx(1, 0) = 2; Msobelx(2, 0) = 4; Msobelx(3, 0) = 2; Msobelx(4, 0) = 2;
+//    Msobelx(0, 1) = 1; Msobelx(1, 1) = 1; Msobelx(2, 1) = 2; Msobelx(3, 1) = 1; Msobelx(4, 1) = 1;
+//    Msobelx(0, 2) = 0; Msobelx(1, 2) = 0; Msobelx(2, 2) = 0; Msobelx(3, 2) = 0; Msobelx(4, 2) = 0;
+//    Msobelx(0, 3) = -1; Msobelx(1, 3) = -1; Msobelx(2, 3) = -2; Msobelx(3, 3) = -1; Msobelx(4, 3) = -1;
+//    Msobelx(0, 4) = -2; Msobelx(1, 4) = -2; Msobelx(2, 4) = -4; Msobelx(3, 4) = -2; Msobelx(4, 4) = -2;
+//
+//    convolucion(imagen, Msobelx, "x");
+//}
+//
+//void Sobely() {
+//    C_Matrix Msobely(0, 4, 0, 4, 0);
+//    Msobely(0, 0) = 2; Msobely(1, 0) = 1; Msobely(2, 0) = 0; Msobely(3, 0) = -1; Msobely(4, 0) = -2;
+//    Msobely(0, 1) = 2; Msobely(1, 1) = 1; Msobely(2, 1) = 0; Msobely(3, 1) = -1; Msobely(4, 1) = -2;
+//    Msobely(0, 2) = 4; Msobely(1, 2) = 2; Msobely(2, 2) = 0; Msobely(3, 2) = -2; Msobely(4, 2) = -4;
+//    Msobely(0, 3) = 2; Msobely(1, 3) = 1; Msobely(2, 3) = 0; Msobely(3, 3) = -1; Msobely(4, 3) = -2;
+//    Msobely(0, 4) = 2; Msobely(1, 4) = 1; Msobely(2, 4) = 0; Msobely(3, 4) = -1; Msobely(4, 4) = -2;
+//
+//    convolucion(imagen, Msobely, "y");
+//}
 
 
 void convolucion(C_Image imagen, C_Matrix mascara, string eje) {
 
-    if (eje == "x") {
-        aux = imagen;
-        aux.Convolution(aux, mascara);
-        aux.WriteBMP("EjeXBiblio");
-    }
     
 
     int tam = mascara.LastRow() - mascara.FirstRow() + 1;
@@ -172,42 +166,42 @@ void magnitudGradientes() {
     }
 }
 
-void umbralizar(int umbral) {
+//void umbralizar(int umbral) {
+//
+//    for (int i = imgFinal.FirstRow(); i <= imgFinal.LastRow(); i++) {
+//        for (int j = imgFinal.FirstCol(); j <= imgFinal.LastCol(); j++) {
+//            if (imgFinal(i, j) > umbral) {
+//                imgFinal(i, j) = 0; 
+//            }
+//            else {
+//                imgFinal(i, j) = 255;
+//            }
+//        }
+//    }
+//}
 
-    for (int i = imgFinal.FirstRow(); i <= imgFinal.LastRow(); i++) {
-        for (int j = imgFinal.FirstCol(); j <= imgFinal.LastCol(); j++) {
-            if (imgFinal(i, j) > umbral) {
-                imgFinal(i, j) = 0; 
-            }
-            else {
-                imgFinal(i, j) = 255;
-            }
-        }
-    }
-}
-
-void suavizadoGaussiano(C_Image imagen, double sigma) {
-    int radio = ceil(2.5 * sigma);
-    int tamano = 2 * radio + 1;
-    C_Matrix filtroGaussiano(0, tamano - 1, 0, tamano -1, 0);
-    double suma = 0.0;
-
-    for (int i = 0; i < tamano; ++i) {
-        for (int j = 0; j < tamano; ++j) {
-            double exponente = -((i - radio) * (i - radio) + (j - radio) * (j - radio)) / (2 * sigma * sigma);
-            filtroGaussiano(i, j) = exp(exponente) / (2 * M_PI * sigma * sigma);
-            suma += filtroGaussiano(i, j);
-        }
-    }
-
-    for (int i = 0; i < tamano; ++i) {
-        for (int j = 0; j < tamano; ++j) {
-            filtroGaussiano(i, j) /= suma;
-        }
-    }
-
-    convolucion(imagen, filtroGaussiano, "suavizado");
-}
+//void suavizadoGaussiano(C_Image imagen, double sigma) {
+//    int radio = ceil(2.5 * sigma);
+//    int tamano = 2 * radio + 1;
+//    C_Matrix filtroGaussiano(0, tamano - 1, 0, tamano -1, 0);
+//    double suma = 0.0;
+//
+//    for (int i = 0; i < tamano; ++i) {
+//        for (int j = 0; j < tamano; ++j) {
+//            double exponente = -((i - radio) * (i - radio) + (j - radio) * (j - radio)) / (2 * sigma * sigma);
+//            filtroGaussiano(i, j) = exp(exponente) / (2 * M_PI * sigma * sigma);
+//            suma += filtroGaussiano(i, j);
+//        }
+//    }
+//
+//    for (int i = 0; i < tamano; ++i) {
+//        for (int j = 0; j < tamano; ++j) {
+//            filtroGaussiano(i, j) /= suma;
+//        }
+//    }
+//
+//    convolucion(imagen, filtroGaussiano, "suavizado");
+//}
 
 void invertirColores() {
     imagenIvertida = imagen;
